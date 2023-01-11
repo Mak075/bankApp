@@ -20,6 +20,11 @@ class DetailViewController: UIViewController {
         branchName.text = branchDetail?.name
         branchLocation.text = branchDetail?.address
     }
+    
+    @IBAction func switchToBranchView(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 }
 
 extension DetailViewController: UITableViewDataSource, UITableViewDelegate  {
@@ -31,31 +36,23 @@ extension DetailViewController: UITableViewDataSource, UITableViewDelegate  {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DayCell", for: indexPath)
 
-        
         guard
-        var startingHour = branchDetail?.workingPeriod?[indexPath.row].startingHour,
-        var startingMinute = branchDetail?.workingPeriod?[indexPath.row].startingMinute,
-        var endingHour = branchDetail?.workingPeriod?[indexPath.row].endingHour,
-        var endingMinute = branchDetail?.workingPeriod?[indexPath.row].endingMinute
+        let startingHour = branchDetail?.workingPeriod?[indexPath.row].startingHour,
+        let startingMinute = branchDetail?.workingPeriod?[indexPath.row].startingMinute,
+        let endingHour = branchDetail?.workingPeriod?[indexPath.row].endingHour,
+        let endingMinute = branchDetail?.workingPeriod?[indexPath.row].endingMinute
         else {
             fatalError("error with convertng on hours and minutes")
         }
+
         
-        let dateFormatter = DateFormatter()
-        var timeStart = dateFormatter.date(from: "\(startingHour):\(startingMinute)")!
-        var timeEnd = dateFormatter.date(from: "\(endingHour):\(endingMinute)")!
-        dateFormatter.dateFormat = "hh:mm"
         
-        var stringTimeStart = dateFormatter.string(from: timeStart)
-        var stringTimeEnd = dateFormatter.string(from: timeEnd)
-        print(timeStart, timeEnd)
-        
-        var startingTime = "\(startingHour):\(startingMinute)"
-        var endingTime = "\(endingHour):\(endingMinute)"
+        let startingTime = String(format: "%02d:%02d", startingHour, startingMinute)
+        let endingTime = String(format: "%02d:%02d", endingHour, endingMinute)
 
         
         cell.textLabel?.text = days[indexPath.row]
-       // cell.detailTextLabel?.text = "\(startingHour):\(startingMinute) - \(endingHour):\(endingMinute)"
+        cell.detailTextLabel?.text = "\(startingTime) - \(endingTime)"
                 
         return cell
     }

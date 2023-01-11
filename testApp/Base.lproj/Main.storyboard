@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lb3-DH-Yi7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CzL-Zt-6vF">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -32,7 +32,7 @@
         <!--Location-->
         <scene sceneID="oKY-ua-sya">
             <objects>
-                <viewController id="8rT-AQ-qBX" customClass="LocationViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ListOfLocationsController" id="8rT-AQ-qBX" customClass="ListOfLocationsController" customModule="testApp" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="q6J-Q3-7hL">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -51,8 +51,8 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.10457112640000001" green="0.26277968289999998" blue="0.28046205639999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MMr-i3-wpf">
-                                <rect key="frame" x="-4" y="83" width="397" height="677"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zbf-cX-jzg">
+                                <rect key="frame" x="0.0" y="83" width="393" height="686"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
@@ -61,10 +61,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Location" id="GvA-5v-BMs" customClass="CustomTabbarItem" customModule="testApp" customModuleProvider="target"/>
+                    <connections>
+                        <outlet property="mapView" destination="zbf-cX-jzg" id="lLm-gk-yVA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JNu-sb-blb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-903.05343511450383" y="-27.464788732394368"/>
+            <point key="canvasLocation" x="-903" y="-27"/>
         </scene>
         <!--List-->
         <scene sceneID="As5-59-5YB">
@@ -329,6 +332,15 @@
                                                     </tableViewCell>
                                                 </prototypes>
                                             </tableView>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WFX-JN-zfZ">
+                                                <rect key="frame" x="264" y="30" width="43" height="39"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain"/>
+                                                <connections>
+                                                    <action selector="switchToBranchView:" destination="mBy-eK-3s1" eventType="touchUpInside" id="AWi-yT-ygS"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.38763821129999998" green="0.74922901389999996" blue="0.74807208780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
@@ -348,7 +360,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BAL-UX-jzh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1101.5267175572519" y="1081.6901408450706"/>
+            <point key="canvasLocation" x="1056" y="1148"/>
         </scene>
         <!--Branch-->
         <scene sceneID="78s-a6-cW5">
@@ -535,6 +547,7 @@
                         <viewLayoutGuide key="safeArea" id="l2L-pK-hSh"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="f3U-lA-CDa"/>
                     <connections>
                         <outlet property="branchAddress" destination="YZ6-Xu-ShK" id="UaS-0f-uiv"/>
                         <outlet property="branchEmail" destination="eWC-hS-Y7K" id="4SL-7Z-nbW"/>
@@ -547,7 +560,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S2y-Kk-pdK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="154.96183206106869" y="1081.6901408450706"/>
+            <point key="canvasLocation" x="176" y="1148"/>
         </scene>
         <!--Mobile Assignment-->
         <scene sceneID="tne-QT-ifu">
@@ -572,7 +585,7 @@
                                 <color key="backgroundColor" red="0.10457112640000001" green="0.26277968289999998" blue="0.28046205639999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nb9-uw-alN">
-                                <rect key="frame" x="-3" y="83" width="399" height="676"/>
+                                <rect key="frame" x="-3" y="83" width="399" height="686"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
@@ -583,7 +596,7 @@
                     <tabBarItem key="tabBarItem" title="My Location" id="BP1-gg-Eea" customClass="CustomTabbarItem" customModule="testApp" customModuleProvider="target"/>
                     <navigationItem key="navigationItem" title="Mobile Assignment" id="ZBX-YQ-6IC"/>
                     <connections>
-                        <outlet property="mapView" destination="nb9-uw-alN" id="L1B-r6-1JU"/>
+                        <outlet property="mapView" destination="nb9-uw-alN" id="yvq-KP-FGM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

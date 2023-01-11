@@ -17,8 +17,8 @@ class BranchViewController: UIViewController {
     func getWorkingStatus() {
         
         let date = Date()
-        var calendar = Calendar.current
-        var calendarComponents = calendar.dateComponents([.weekday, .hour, .minute], from: date)
+        let calendar = Calendar.current
+        let calendarComponents = calendar.dateComponents([.weekday, .hour, .minute], from: date)
         
         if let workingPeriod = branch?.workingPeriod, let tempDay = workingPeriod.first(where: { period in
             return period.day == calendarComponents.weekday
@@ -52,8 +52,8 @@ class BranchViewController: UIViewController {
     
     
     @IBAction func sendToDetailViewController(_ sender: UIButton) {
-        var storyboard = UIStoryboard(name: "Main", bundle: nil)
-        var vc = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
         vc.branchDetail = branch
         self.present(vc, animated: true, completion: nil)
     }

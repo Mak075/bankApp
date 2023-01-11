@@ -51,13 +51,13 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate  {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if (locationsArray[indexPath.row].type == "branch") {
-            var storyboard = UIStoryboard(name: "Main", bundle: nil)
-            var vc = storyboard.instantiateViewController(withIdentifier: "BranchViewController") as! BranchViewController
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "BranchViewController") as! BranchViewController
             vc.branch = locationsArray[indexPath.row]
             self.present(vc, animated: true, completion: nil)
         } else {
-            var storyboard = UIStoryboard(name: "Main", bundle: nil)
-            var vc = storyboard.instantiateViewController(withIdentifier: "AtmViewController") as! AtmViewController
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "AtmViewController") as! AtmViewController
             vc.atm = locationsArray[indexPath.row]
             self.present(vc, animated: true, completion: nil)
         }

@@ -8,7 +8,6 @@ protocol DataManagerDelegate {
 struct DataManager {
 
     var delegate: DataManagerDelegate?
-    // var delegateAtm: AtmDataStore?
     
     
     func fetchData() {
