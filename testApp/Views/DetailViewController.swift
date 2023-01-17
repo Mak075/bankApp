@@ -25,6 +25,12 @@ class DetailViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    
+    @IBAction func backButton(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
 }
 
 extension DetailViewController: UITableViewDataSource, UITableViewDelegate  {

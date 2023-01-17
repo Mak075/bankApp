@@ -7,10 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8F3E7847295B3E5D00C94388 /* CostumTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3E7846295B3E5D00C94388 /* CostumTabBar.swift */; };
 		8F3E784A295C300A00C94388 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3E7849295C300A00C94388 /* DataManager.swift */; };
 		8F3E784C295C30AE00C94388 /* DataCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3E784B295C30AE00C94388 /* DataCall.swift */; };
-		8F3E7857295DC15C00C94388 /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3E7856295DC15C00C94388 /* TabBarItem.swift */; };
 		8F6124A4296C073100CA99B4 /* ListOfLocationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6124A3296C073100CA99B4 /* ListOfLocationsController.swift */; };
 		8F6124A7296D9B3B00CA99B4 /* AnnotationPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6124A6296D9B3B00CA99B4 /* AnnotationPin.swift */; };
 		8F747B7F2959DC3F00A8F2C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F747B7E2959DC3F00A8F2C0 /* AppDelegate.swift */; };
@@ -28,10 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8F3E7846295B3E5D00C94388 /* CostumTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostumTabBar.swift; sourceTree = "<group>"; };
 		8F3E7849295C300A00C94388 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		8F3E784B295C30AE00C94388 /* DataCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCall.swift; sourceTree = "<group>"; };
-		8F3E7856295DC15C00C94388 /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
 		8F6124A3296C073100CA99B4 /* ListOfLocationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfLocationsController.swift; sourceTree = "<group>"; };
 		8F6124A6296D9B3B00CA99B4 /* AnnotationPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationPin.swift; sourceTree = "<group>"; };
 		8F747B7B2959DC3F00A8F2C0 /* testApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,14 +57,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8F3E7845295B3E4700C94388 /* CostumTabBar */ = {
-			isa = PBXGroup;
-			children = (
-				8F3E7846295B3E5D00C94388 /* CostumTabBar.swift */,
-			);
-			path = CostumTabBar;
-			sourceTree = "<group>";
-		};
 		8F3E7848295C2FF200C94388 /* API */ = {
 			isa = PBXGroup;
 			children = (
@@ -76,14 +64,6 @@
 				8F3E784B295C30AE00C94388 /* DataCall.swift */,
 			);
 			path = API;
-			sourceTree = "<group>";
-		};
-		8F3E7855295DC13E00C94388 /* UI */ = {
-			isa = PBXGroup;
-			children = (
-				8F3E7856295DC15C00C94388 /* TabBarItem.swift */,
-			);
-			path = UI;
 			sourceTree = "<group>";
 		};
 		8F6124A5296D9AF400CA99B4 /* Model */ = {
@@ -114,9 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				8F6124A5296D9AF400CA99B4 /* Model */,
-				8F3E7855295DC13E00C94388 /* UI */,
 				8F3E7848295C2FF200C94388 /* API */,
-				8F3E7845295B3E4700C94388 /* CostumTabBar */,
 				8F747B7E2959DC3F00A8F2C0 /* AppDelegate.swift */,
 				8F747B802959DC3F00A8F2C0 /* SceneDelegate.swift */,
 				8F747B95295ADC3200A8F2C0 /* Views */,
@@ -220,9 +198,7 @@
 				8F747B832959DC3F00A8F2C0 /* MyLocationViewController.swift in Sources */,
 				8FBDB9912965C89600CD549E /* DetailViewController.swift in Sources */,
 				8F747B99295ADC9400A8F2C0 /* BranchViewController.swift in Sources */,
-				8F3E7857295DC15C00C94388 /* TabBarItem.swift in Sources */,
 				8F747B892959DC3F00A8F2C0 /* testApp.xcdatamodeld in Sources */,
-				8F3E7847295B3E5D00C94388 /* CostumTabBar.swift in Sources */,
 				8F747B7F2959DC3F00A8F2C0 /* AppDelegate.swift in Sources */,
 				8F3E784A295C300A00C94388 /* DataManager.swift in Sources */,
 				8F747B812959DC3F00A8F2C0 /* SceneDelegate.swift in Sources */,

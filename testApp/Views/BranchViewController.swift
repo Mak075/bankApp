@@ -6,6 +6,13 @@ class BranchViewController: UIViewController {
     
     var branch: Location?
     
+    
+    @IBOutlet weak var phoneBackground: UIView!
+    @IBOutlet weak var workHoursBackground: UIView!
+    @IBOutlet weak var addressBackground: UIView!
+    @IBOutlet weak var meetingRequestBackground: UIView!
+    @IBOutlet weak var webSiteBackground: UIView!
+    
     @IBOutlet weak var branchName: UILabel!
     @IBOutlet weak var branchLocation: UILabel!
     @IBOutlet weak var branchPhoneNumber: UILabel!
@@ -41,7 +48,15 @@ class BranchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        phoneBackground.layer.cornerRadius = 10
+        workHoursBackground.layer.cornerRadius = 10
+        addressBackground.layer.cornerRadius = 10
+        meetingRequestBackground.layer.cornerRadius = 10
+        webSiteBackground.layer.cornerRadius = 10
+        
         getWorkingStatus()
+        
         branchName.text = branch?.name
         branchLocation.text = branch?.address
         branchPhoneNumber.text = branch?.phone
@@ -56,5 +71,9 @@ class BranchViewController: UIViewController {
         let vc = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
         vc.branchDetail = branch
         self.present(vc, animated: true, completion: nil)
+    }
+    
+    @IBAction func backButton(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
     }
 }
