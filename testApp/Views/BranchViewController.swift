@@ -2,7 +2,7 @@ import Foundation
 import UIKit
 
 
-class BranchViewController: UIViewController {
+class BranchViewController: UITableViewController {
     
     var branch: Location?
     
@@ -12,6 +12,7 @@ class BranchViewController: UIViewController {
     @IBOutlet weak var addressBackground: UIView!
     @IBOutlet weak var meetingRequestBackground: UIView!
     @IBOutlet weak var webSiteBackground: UIView!
+    
     
     @IBOutlet weak var branchName: UILabel!
     @IBOutlet weak var branchLocation: UILabel!
@@ -64,7 +65,6 @@ class BranchViewController: UIViewController {
         branchEmail.text = branch?.email
         branchWebLink.text = branch?.website
     }
-    
     
     @IBAction func sendToDetailViewController(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)

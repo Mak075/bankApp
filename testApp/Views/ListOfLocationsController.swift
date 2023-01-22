@@ -4,6 +4,7 @@ import UIKit
 import MapKit
 import CoreLocation
 
+
 class MyPointAnnotationView: NSObject, MKAnnotation {
     var coordinate: CLLocationCoordinate2D = CLLocationCoordinate2D()
     
@@ -23,7 +24,7 @@ class ListOfLocationsController: UIViewController, CLLocationManagerDelegate, MK
     var pin: AnnotationPin?
     
     override func viewDidLoad() {
-
+        
         super.viewDidLoad()
         dataManager.delegate = self
         dataManager.fetchData()

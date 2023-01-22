@@ -18,7 +18,7 @@ class ListViewController: UIViewController, UISearchBarDelegate {
     @IBOutlet weak var tableView: UITableView!
     
     var locationsArray: [Location] = []
-    var filteredData: [Location]!
+    var filteredData: [Location] = []
     var dataManager = DataManager()
     
     
@@ -32,9 +32,8 @@ class ListViewController: UIViewController, UISearchBarDelegate {
         dataManager.fetchData()
         
         searchBar.delegate = self
-        searchBar.barTintColor = .black // kako staviti costum color u ovom propertiju
+        searchBar.backgroundImage = UIImage()
         searchBar.searchTextField.backgroundColor = .white
-        filteredData = locationsArray
     }
 
 }
@@ -73,8 +72,12 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
         
         filteredData = []
         
+        if searchText == "" {
+            filteredData = locationsArray
+        }
+        
             for element in locationsArray {
-                if ((element.name?.lowercased().contains(searchText.lowercased())) != nil) {
+                if (element.name!.lowercased().contains(searchText.lowercased())) {
                     filteredData.append(element)
                 }
             }
@@ -88,6 +91,7 @@ extension ListViewController: DataManagerDelegate {
     func storeLocations(_ dataManager: DataManager, locations: [Location]) {
         DispatchQueue.main.async {
             self.locationsArray = locations
+            self.filteredData = locations
             self.tableView.reloadData()
         }
     }
